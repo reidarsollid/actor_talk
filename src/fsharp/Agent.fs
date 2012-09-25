@@ -12,13 +12,13 @@ let start() =
         let! msg = inbox.Receive()
         match msg with
         | End ->
-            printf "Bye \n"
+            printfn "Bye"
             return()
         | Rectangle(width, height) ->
-            printf "Area is %O\n" (width * height)
+            printfn "Area is %O" (width * height)
             return! loop()
         | Circle(radius) ->
-            printf "Area is %O \n" (Math.PI * radius * radius)
+            printfn "Area is %O" (Math.PI * radius * radius)
             return! loop()
     }
     loop())
