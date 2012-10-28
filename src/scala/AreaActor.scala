@@ -19,8 +19,8 @@ class AreaActor extends Actor {
           println(Pi * radius * radius)
         case End =>
           exit('ok)
-        case what =>
-          print("Can't calculate area of " + what)
+        case n =>
+          println("Can't calculate area of " + n)
       }
     }
   }
@@ -29,5 +29,8 @@ class AreaActor extends Actor {
 object AreaActor extends App {
   val areaActor = new AreaActor().start()
   areaActor ! Rectangle(22, 23)
+  areaActor ! 'hello
+  areaActor ! 22
   areaActor ! End
+
 }
