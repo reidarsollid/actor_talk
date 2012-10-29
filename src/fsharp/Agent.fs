@@ -22,3 +22,9 @@ let start() =
             return! loop()
     }
     loop())
+
+let pid = Agents.start()
+
+pid.Post(Agents.Rectangle(10,3))
+pid.Post(Agents.Circle(3.9))
+pid.Post(Agents.End)
